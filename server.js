@@ -1,6 +1,6 @@
 var express = require('express');
 var passport = require('passport');
-var Strategy = require('passport-twitter').Strategy;
+var Strategy = require('passport-openidconnect').Strategy;
 
 
 // Configure the Twitter strategy for use by Passport.
@@ -74,11 +74,11 @@ app.get('/login',
     res.render('login');
   });
 
-app.get('/login/twitter',
-  passport.authenticate('twitter'));
+app.get('/login/idp',
+  passport.authenticate('openidconnect'));
 
-app.get('/login/twitter/return', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
+app.get('/login/idp/return', 
+  passport.authenticate('openidconnect', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
   });
