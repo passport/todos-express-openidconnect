@@ -11,9 +11,11 @@ var Strategy = require('passport-openidconnect').Strategy;
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new Strategy({
-    consumerKey: process.env.CONSUMER_KEY,
-    consumerSecret: process.env.CONSUMER_SECRET,
-    callbackURL: 'http://localhost:3000/login/twitter/return'
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    authorizationURL: 'https://login0.myauth0.com/i/oauth2/authorize',
+    tokenURL: 'https://login0.myauth0.com/oauth/token',
+    callbackURL: 'http://localhost:3000/callback'
   },
   function(token, tokenSecret, profile, cb) {
     // In this example, the user's Twitter profile is supplied as the user
@@ -77,7 +79,7 @@ app.get('/login',
 app.get('/login/idp',
   passport.authenticate('openidconnect'));
 
-app.get('/login/idp/return', 
+app.get('/callback', 
   passport.authenticate('openidconnect', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/');
