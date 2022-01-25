@@ -1,31 +1,50 @@
 {
-  "name": "express-4.x-openidconnect-example",
+  "name": "todos-express-openidconnect",
   "version": "0.0.0",
-  "description": "Express 4.x app using Passport for authentication via OpenID Connect.",
+  "private": true,
+  "description": "Todo app using Express, Passport, and SQLite for sign in via OpenID Connect.",
   "keywords": [
     "example",
     "express",
-    "passport"
+    "passport",
+    "sqlite"
   ],
-  "author": "Jared Hanson",
-  "license": "Unlicense",
-  "homepage": "https://github.com/passport/express-4.x-openidconnect-example",
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "https://www.jaredhanson.me/"
+  },
+  "homepage": "https://github.com/passport/todos-express-openidconnect",
   "repository": {
     "type": "git",
-    "url": "git://github.com/passport/express-4.x-openidconnect-example.git"
+    "url": "git://github.com/passport/todos-express-openidconnect.git"
   },
   "bugs": {
-    "url": "https://github.com/passport/express-4.x-openidconnect-example/issues"
+    "url": "https://github.com/passport/todos-express-openidconnect/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/jaredhanson"
+  },
+  "license": "Unlicense",
+  "scripts": {
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.13.2",
     "connect-ensure-login": "^0.1.1",
-    "cookie-parser": "^1.3.5",
-    "ejs": "^2.3.3",
-    "express": "^4.13.1",
-    "express-session": "^1.11.3",
-    "morgan": "^1.6.1",
-    "passport": "^0.2.2",
-    "passport-openidconnect": "^0.0.1"
+    "connect-sqlite3": "^0.9.13",
+    "cookie-parser": "~1.4.4",
+    "csurf": "^1.11.0",
+    "debug": "~2.6.9",
+    "dotenv": "^8.6.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "mkdirp": "^1.0.4",
+    "morgan": "~1.9.1",
+    "passport": "^0.5.2",
+    "pluralize": "^8.0.0",
+    "sqlite3": "^5.0.2"
   }
 }
