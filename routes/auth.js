@@ -1,7 +1,6 @@
 var express = require('express');
 var passport = require('passport');
 var OpenIDConnectStrategy = require('passport-openidconnect');
-var db = require('../db');
 
 
 passport.use(new OpenIDConnectStrategy({
@@ -12,10 +11,8 @@ passport.use(new OpenIDConnectStrategy({
   clientID: process.env['CLIENT_ID'],
   clientSecret: process.env['CLIENT_SECRET'],
   callbackURL: '/oauth2/redirect',
-  scope: [ 'profile' ],
-  state: true
-},
-function verify(issuer, profile, cb) {
+  scope: [ 'profile' ]
+}, function verify(issuer, profile, cb) {
   return cb(null, profile);
 }));
 
