@@ -18,7 +18,7 @@ This app must be configured with an OpenID Provider (OP)'s endpoints, as well as
 a client ID and secret that has been issued by the OP.
 
 The endpoints should be set as options to `OpenIDConnectStrategy` in
-[routes/auth.js](https://github.com/passport/todos-express-openidconnect/blob/master/routes/auth.js#L8-L11).
+[routes/auth.js](https://github.com/passport/todos-express-openidconnect/blob/master/routes/auth.js#L7-L10).
 
 Once the client ID and secret have been obtained, create a `.env` file and add
 the following environment variables:
